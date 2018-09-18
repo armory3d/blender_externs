@@ -1,0 +1,3 @@
+DepsgraphObjectInstance.uv = None
+
+

@@ -1,0 +1,4 @@
+def remove(layer):
+    pass
+
+

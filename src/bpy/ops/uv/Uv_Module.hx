@@ -1,0 +1,48 @@
+/* This file is generated, do not edit! */
+package bpy.ops.uv;
+@:pythonImport("bpy.ops.uv") extern class Uv_Module {
+	static public var __builtins__ : Dynamic;
+	static public var __cached__ : Dynamic;
+	static public var __doc__ : Dynamic;
+	static public var __file__ : Dynamic;
+	static public var __loader__ : Dynamic;
+	static public var __name__ : Dynamic;
+	static public var __package__ : Dynamic;
+	static public var __spec__ : Dynamic;
+	static public function align(?axis:Dynamic):Dynamic;
+	static public function average_islands_scale():Dynamic;
+	static public function circle_select(?x:Dynamic, ?y:Dynamic, ?radius:Dynamic, ?deselect:Dynamic):Dynamic;
+	static public function cube_project(?cube_size:Dynamic, ?correct_aspect:Dynamic, ?clip_to_bounds:Dynamic, ?scale_to_bounds:Dynamic):Dynamic;
+	static public function cursor_set(?location:Dynamic):Dynamic;
+	static public function cylinder_project(?direction:Dynamic, ?align:Dynamic, ?radius:Dynamic, ?correct_aspect:Dynamic, ?clip_to_bounds:Dynamic, ?scale_to_bounds:Dynamic):Dynamic;
+	static public function follow_active_quads(?mode:Dynamic):Dynamic;
+	static public function hide(?unselected:Dynamic):Dynamic;
+	static public function lightmap_pack(?PREF_CONTEXT:Dynamic, ?PREF_PACK_IN_ONE:Dynamic, ?PREF_NEW_UVLAYER:Dynamic, ?PREF_APPLY_IMAGE:Dynamic, ?PREF_IMG_PX_SIZE:Dynamic, ?PREF_BOX_DIV:Dynamic, ?PREF_MARGIN_DIV:Dynamic):Dynamic;
+	static public function mark_seam(?clear:Dynamic):Dynamic;
+	static public function minimize_stretch(?fill_holes:Dynamic, ?blend:Dynamic, ?iterations:Dynamic):Dynamic;
+	static public function pack_islands(?rotate:Dynamic, ?margin:Dynamic):Dynamic;
+	static public function pin(?clear:Dynamic):Dynamic;
+	static public function project_from_view(?orthographic:Dynamic, ?camera_bounds:Dynamic, ?correct_aspect:Dynamic, ?clip_to_bounds:Dynamic, ?scale_to_bounds:Dynamic):Dynamic;
+	static public function remove_doubles(?threshold:Dynamic, ?use_unselected:Dynamic):Dynamic;
+	static public function reset():Dynamic;
+	static public function reveal(?select:Dynamic):Dynamic;
+	static public function seams_from_islands(?mark_seams:Dynamic, ?mark_sharp:Dynamic):Dynamic;
+	static public function select(?extend:Dynamic, ?location:Dynamic):Dynamic;
+	static public function select_all(?action:Dynamic):Dynamic;
+	static public function select_border(?pinned:Dynamic, ?xmin:Dynamic, ?xmax:Dynamic, ?ymin:Dynamic, ?ymax:Dynamic, ?deselect:Dynamic, ?extend:Dynamic):Dynamic;
+	static public function select_lasso(?path:Dynamic, ?deselect:Dynamic, ?extend:Dynamic):Dynamic;
+	static public function select_less():Dynamic;
+	static public function select_linked(?extend:Dynamic, ?deselect:Dynamic):Dynamic;
+	static public function select_linked_pick(?extend:Dynamic, ?deselect:Dynamic, ?location:Dynamic):Dynamic;
+	static public function select_loop(?extend:Dynamic, ?location:Dynamic):Dynamic;
+	static public function select_more():Dynamic;
+	static public function select_pinned():Dynamic;
+	static public function select_split():Dynamic;
+	static public function smart_project(?angle_limit:Dynamic, ?island_margin:Dynamic, ?user_area_weight:Dynamic, ?use_aspect:Dynamic, ?stretch_to_bounds:Dynamic):Dynamic;
+	static public function snap_cursor(?target:Dynamic):Dynamic;
+	static public function snap_selected(?target:Dynamic):Dynamic;
+	static public function sphere_project(?direction:Dynamic, ?align:Dynamic, ?correct_aspect:Dynamic, ?clip_to_bounds:Dynamic, ?scale_to_bounds:Dynamic):Dynamic;
+	static public function stitch(?use_limit:Dynamic, ?snap_islands:Dynamic, ?limit:Dynamic, ?static_island:Dynamic, ?active_object_index:Dynamic, ?midpoint_snap:Dynamic, ?clear_seams:Dynamic, ?mode:Dynamic, ?stored_mode:Dynamic, ?selection:Dynamic, ?objects_selection_count:Dynamic):Dynamic;
+	static public function unwrap(?method:Dynamic, ?fill_holes:Dynamic, ?correct_aspect:Dynamic, ?use_subsurf_data:Dynamic, ?margin:Dynamic):Dynamic;
+	static public function weld():Dynamic;
+}

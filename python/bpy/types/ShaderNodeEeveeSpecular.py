@@ -1,0 +1,5 @@
+class ShaderNodeEeveeSpecular:
+
+    pass
+
+

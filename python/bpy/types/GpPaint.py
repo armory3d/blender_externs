@@ -1,0 +1,5 @@
+class GpPaint:
+
+    pass
+
+

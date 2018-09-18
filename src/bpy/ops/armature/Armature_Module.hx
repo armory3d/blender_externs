@@ -1,0 +1,48 @@
+/* This file is generated, do not edit! */
+package bpy.ops.armature;
+@:pythonImport("bpy.ops.armature") extern class Armature_Module {
+	static public var __builtins__ : Dynamic;
+	static public var __cached__ : Dynamic;
+	static public var __doc__ : Dynamic;
+	static public var __file__ : Dynamic;
+	static public var __loader__ : Dynamic;
+	static public var __name__ : Dynamic;
+	static public var __package__ : Dynamic;
+	static public var __spec__ : Dynamic;
+	static public function align():Dynamic;
+	static public function armature_layers(?layers:Dynamic):Dynamic;
+	static public function autoside_names(?type:Dynamic):Dynamic;
+	static public function bone_layers(?layers:Dynamic):Dynamic;
+	static public function bone_primitive_add(?name:Dynamic):Dynamic;
+	static public function calculate_roll(?type:Dynamic, ?axis_flip:Dynamic, ?axis_only:Dynamic):Dynamic;
+	static public function click_extrude():Dynamic;
+	static public function delete():Dynamic;
+	static public function dissolve():Dynamic;
+	static public function duplicate(?do_flip_names:Dynamic):Dynamic;
+	static public function duplicate_move(?ARMATURE_OT_duplicate:Dynamic, ?TRANSFORM_OT_translate:Dynamic):Dynamic;
+	static public function extrude(?forked:Dynamic):Dynamic;
+	static public function extrude_forked(?ARMATURE_OT_extrude:Dynamic, ?TRANSFORM_OT_translate:Dynamic):Dynamic;
+	static public function extrude_move(?ARMATURE_OT_extrude:Dynamic, ?TRANSFORM_OT_translate:Dynamic):Dynamic;
+	static public function fill():Dynamic;
+	static public function flip_names(?do_strip_numbers:Dynamic):Dynamic;
+	static public function hide(?unselected:Dynamic):Dynamic;
+	static public function layers_show_all(?all:Dynamic):Dynamic;
+	static public function merge(?type:Dynamic):Dynamic;
+	static public function parent_clear(?type:Dynamic):Dynamic;
+	static public function parent_set(?type:Dynamic):Dynamic;
+	static public function reveal(?select:Dynamic):Dynamic;
+	static public function roll_clear(?roll:Dynamic):Dynamic;
+	static public function select_all(?action:Dynamic):Dynamic;
+	static public function select_hierarchy(?direction:Dynamic, ?extend:Dynamic):Dynamic;
+	static public function select_less():Dynamic;
+	static public function select_linked(?extend:Dynamic):Dynamic;
+	static public function select_mirror(?only_active:Dynamic, ?extend:Dynamic):Dynamic;
+	static public function select_more():Dynamic;
+	static public function select_similar(?type:Dynamic, ?threshold:Dynamic):Dynamic;
+	static public function separate():Dynamic;
+	static public function shortest_path_pick():Dynamic;
+	static public function split():Dynamic;
+	static public function subdivide(?number_cuts:Dynamic):Dynamic;
+	static public function switch_direction():Dynamic;
+	static public function symmetrize(?direction:Dynamic):Dynamic;
+}

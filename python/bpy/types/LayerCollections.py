@@ -1,0 +1,5 @@
+class LayerCollections:
+    active = None
+
+
+

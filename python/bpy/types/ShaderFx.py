@@ -1,0 +1,3 @@
+ShaderFx.type = None
+
+

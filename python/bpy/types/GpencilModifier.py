@@ -1,0 +1,3 @@
+GpencilModifier.type = None
+
+

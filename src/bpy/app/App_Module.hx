@@ -1,0 +1,44 @@
+/* This file is generated, do not edit! */
+package bpy.app;
+@:pythonImport("bpy.app") extern class App_Module {
+	static public var __builtins__ : Dynamic;
+	static public var __cached__ : Dynamic;
+	static public var __doc__ : Dynamic;
+	static public var __file__ : Dynamic;
+	static public var __loader__ : Dynamic;
+	static public var __name__ : Dynamic;
+	static public var __package__ : Dynamic;
+	static public var __path__ : Dynamic;
+	static public var __spec__ : Dynamic;
+	static public var alembic : Dynamic;
+	static public var background : Dynamic;
+	static public var binary_path : Dynamic;
+	static public var build_branch : Dynamic;
+	static public var build_cflags : Dynamic;
+	static public var build_commit_date : Dynamic;
+	static public var build_commit_time : Dynamic;
+	static public var build_commit_timestamp : Dynamic;
+	static public var build_cxxflags : Dynamic;
+	static public var build_date : Dynamic;
+	static public var build_hash : Dynamic;
+	static public var build_linkflags : Dynamic;
+	static public var build_options : Dynamic;
+	static public var build_platform : Dynamic;
+	static public var build_system : Dynamic;
+	static public var build_time : Dynamic;
+	static public var build_type : Dynamic;
+	static public var factory_startup : Dynamic;
+	static public var ffmpeg : Dynamic;
+	static public var handlers : Dynamic;
+	static public var icons : Dynamic;
+	static public var ocio : Dynamic;
+	static public var oiio : Dynamic;
+	static public var opensubdiv : Dynamic;
+	static public var openvdb : Dynamic;
+	static public var sdl : Dynamic;
+	static public var translations : Dynamic;
+	static public var version : Dynamic;
+	static public var version_char : Dynamic;
+	static public var version_cycle : Dynamic;
+	static public var version_string : Dynamic;
+}

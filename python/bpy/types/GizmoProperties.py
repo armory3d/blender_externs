@@ -1,0 +1,5 @@
+class GizmoProperties:
+
+    pass
+
+
