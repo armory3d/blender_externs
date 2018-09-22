@@ -3,3 +3,5 @@ haxe
 hl
 .vscode/
 std/
+log.xml
+test/
