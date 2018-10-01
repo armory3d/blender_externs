@@ -9,9 +9,9 @@ import haxe.macro.Expr;
 using Lambda;
 
 class Main {
-	static final nullPos:Position = cast { min: 0, max: 0, file: "" };
-  static final printer:Printer = new Printer();
-  static final capitalize = (text: String) -> {
+	static final nullPos: Position = cast { min: 0, max: 0, file: "" };
+  static final printer: Printer = new Printer();
+  static final capitalize: String -> String = (text: String) -> {
     return text.charAt(0).toUpperCase() + text.substring(1);
   }
 
@@ -26,43 +26,73 @@ class Main {
       var xml = Parser.parse(file);
 
       // XML nodes.
-      // TODO: Iterate through each section / desc. For now just getting the first in file.
-      var section = xml.firstElement().firstElement();
-      var desc = section.elementsNamed("desc");
+      var fileContent = "";
+      var moduleClass: TypeDefinition = {
+        pack: [],
+        name: "",
+        pos: nullPos,
+        meta: [],
+        params: null,
+        isExtern: true,
+        kind: TDClass(null, null, false),
+        fields: []
+      }
 
-      if(desc.hasNext()) {
-        // If has class.
-        //var className = desc.next().firstElement().get("fullname");
+      var sections = xml.firstElement().elementsNamed("section");
+      for (sectionContainer in sections) {
+        var section = sectionContainer;
+        
+        // If there is a nested section...
+        if(sectionContainer.elementsNamed("section").hasNext()) {
+          section = sectionContainer.elementsNamed("section").next();
+        }
+
+        convertSection(section, fileName, fileContent, moduleClass);
+
         var fileNameSplit = fileName.split(".");
         var className = capitalize(fileNameSplit[0]);
+        moduleClass.name = className;
+        /// Add module class to file content.
+        fileContent += printer.printTypeDefinition(moduleClass);
 
-
-        var externString = printer.printTypeDefinition({
-          pack: ["bpy", "types"],
-          name: className,
-          pos: nullPos,
-          meta: [],
-          params: null,
-          isExtern: true,
-          kind: TDClass({name: "Type", pack: ["bpy"]}, null, false),
-          fields: []
-        });
-        /*{
-            name: "testProp",
-            pos: nullPos,
-            kind: FVar(null, { expr: EConst(CString("VALUE")), pos: nullPos }),
-          }*/
-
-        File.saveContent('./test/${className}.hx', externString);
-
+        File.saveContent('./test/${className}.hx', fileContent);
         // Exit at first to avoid compiling huge list of files.
         Sys.exit(0);
-      } /*else {
-        // Edge case of no class.
-        //File.saveContent('./log.xml', fileName + "\n" + section.toString());
-        //Sys.exit(0);
-      }*/
+      }
     });
 	}
-}
 
+	static final convertSection = (section: Xml, fileName: String, fileContent: String, moduleClass: TypeDefinition) -> {
+		  var descriptions = section.elementsNamed("desc");
+      if(descriptions.hasNext()) {
+        for (desc in descriptions) {
+          convertDescription(desc, fileName, fileContent, moduleClass);
+        }
+      }
+	}
+
+  static final convertDescription = (desc: Xml, fileName: String, fileContent: String, moduleClass: TypeDefinition) -> {
+    var descType = desc.get("desctype");
+    switch(descType) {
+      case "function":
+        trace("function");
+      case "class":
+        trace("class");
+      case "data":
+        var regex = ~/[0-9]/i;
+        var nodeVal = desc.elementsNamed("desc_content").next().firstElement().firstChild().nodeValue.split(" ");
+        var propName = desc.firstElement().get("fullname");
+        var propVal = nodeVal[nodeVal.length - 1];
+        
+        moduleClass.fields.push({
+          access: [APublic, AStatic, AInline],
+          name: propName,
+          pos: nullPos,
+          kind: FVar(null, { expr: EConst(CInt(propVal)), pos: nullPos }),
+        });
+        trace("data");
+      default:
+       trace("default");
+    };
+  }
+}
