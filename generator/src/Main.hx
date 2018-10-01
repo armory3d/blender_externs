@@ -16,7 +16,7 @@ class Main {
 	}
 
 	static function main() {
-		// Grab files paths.
+		// Grab file paths.
 		var filePaths = FileSystem.readDirectory('../xml');
 
 		// Iterate through file paths iterable.
@@ -52,10 +52,13 @@ class Main {
 				var fileNameSplit = fileName.split(".");
 				var className = capitalize(fileNameSplit[0]);
 				moduleClass.name = className;
-				/// Add module class to file content.
+
+				// Add module class to file content.
 				fileContent += printer.printTypeDefinition(moduleClass);
 
+				// Save file.
 				File.saveContent('./test/${className}.hx', fileContent);
+
 				// Exit at first to avoid compiling huge list of files.
 				Sys.exit(0);
 			}
